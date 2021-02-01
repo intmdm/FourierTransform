@@ -35,7 +35,7 @@ public class InterfaceController {
 
     public void initialize() {
         createGraphicButton.setOnMouseClicked((MouseEvent event) -> {
-            GraphicCreator.showGraphic(firstLineChart, FUNCTION, PERIOD, N, "Original");
+            //GraphicCreator.showGraphic(firstLineChart, FUNCTION, PERIOD, N, "Original");
 
             ComplexNumber discreteFourierTransformResult[] = FourierFunction.getDiscreteFourierTransform(FUNCTION, PERIOD, N);
             System.out.println("-----Discrete-----");
@@ -46,22 +46,6 @@ public class InterfaceController {
             discreteCalculationsLabel.setText("+: " + ComplexNumber.getPlusCounter() + ComplexNumber.getPlusCounter()
                     + "; *: " + ComplexNumber.getMultiplyCounter());
             ComplexNumber.nullifyAllCounters();
-
-            ComplexNumber fastFourierTransformResult[] = FourierFunction.getFastFourierTransform(FUNCTION, PERIOD, N);
-            System.out.println("-----Inverse-----");
-            for(int i = 0; i < N; i++) {
-                System.out.println("C["+i+"]="+discreteFourierTransformResult[i]);
-            }
-            GraphicCreator.showGraphic(thirdLineChart, discreteFourierTransformResult, "Direct FFT");
-            fastCalculationsLabel.setText("+: " + ComplexNumber.getPlusCounter() + ComplexNumber.getPlusCounter()
-                    + "; *: " + ComplexNumber.getMultiplyCounter());
-
-            double reverseFourierTransformResult[] = FourierFunction.getReverseFourierTransform(discreteFourierTransformResult, PERIOD, N);
-            GraphicCreator.showGraphic(fourthLineChart, reverseFourierTransformResult, PERIOD, "Inverse DFT");
-
-            reverseFourierTransformResult = FourierFunction.getReverseFourierTransform(fastFourierTransformResult, PERIOD, N);
-            GraphicCreator.showGraphic(fifthLineChart, reverseFourierTransformResult, PERIOD, "Inverse FFT");
-
         });
     }
 }
