@@ -1,4 +1,4 @@
-package sample;
+package Fourier;
 
 public class ComplexNumber {
     private static int minusCounter;

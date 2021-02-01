@@ -1,4 +1,4 @@
-package sample;
+package Fourier;
 
 import com.aquafx_project.AquaFx;
 import javafx.application.Application;
@@ -17,7 +17,7 @@ public class FourierApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        URL fxmlURL = getClass().getClassLoader().getResource("sample/main.fxml");
+        URL fxmlURL = getClass().getClassLoader().getResource("Fourier/main.fxml");
         if (fxmlURL != null) {
             try {
                 Parent root = FXMLLoader.load(fxmlURL);

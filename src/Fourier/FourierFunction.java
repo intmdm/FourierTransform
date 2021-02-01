@@ -1,4 +1,4 @@
-package sample;
+package Fourier;
 
 import java.util.function.Function;
 
